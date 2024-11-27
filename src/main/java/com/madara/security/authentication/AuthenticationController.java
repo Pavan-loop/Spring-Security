@@ -27,4 +27,14 @@ public class AuthenticationController {
         authenticationService.registerUser(request, upperRole);
         return ResponseEntity.accepted().build();
     }
+
+    @PostMapping("/login")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public ResponseEntity<String> loginUser(
+            @RequestBody
+            LoginRequest request
+    ) {
+        String token = authenticationService.loginAndGenerateJwtToken(request);
+        return new ResponseEntity<>(token, HttpStatus.ACCEPTED);
+    }
 }
