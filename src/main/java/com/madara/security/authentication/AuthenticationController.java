@@ -22,9 +22,8 @@ public class AuthenticationController {
             RegistrationRequest request,
             @RequestParam("role") String role
     ) {
-        System.out.println("hello");
-        Role upperRole = Role.valueOf(role.toUpperCase());
-        authenticationService.registerUser(request, upperRole);
+        Role convToRole = Role.valueOf(role.toUpperCase());
+        authenticationService.registerUser(request, convToRole);
         return ResponseEntity.accepted().build();
     }
 }
