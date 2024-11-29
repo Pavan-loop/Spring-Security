@@ -1,6 +1,6 @@
 package com.madara.security.authentication;
 
-import com.madara.security.security.JwtService;
+import com.madara.security.security.jwt.JwtService;
 import com.madara.security.user.Role;
 import com.madara.security.user.User;
 import com.madara.security.user.UserRepository;
