@@ -37,6 +37,9 @@ public class jwtserviceut {
         String extractedEmail = jwtService.extractEmail(token);
 
         assertEquals(email, extractedEmail, "This both should be same");
+
+        System.out.println("Expected: " + email);
+        System.out.println("Result: " + extractedEmail);
     }
 
     @Test
@@ -61,6 +64,9 @@ public class jwtserviceut {
         boolean result = jwtService.isTokenValid(token, userDetails);
 
         assertEquals(notExpired, result);
+
+        System.out.println("Expected: " + notExpired);
+        System.out.println("Result: " + result);
     }
 
     @Test
@@ -78,7 +84,7 @@ public class jwtserviceut {
 
         String extractedEmail = jwtService.extractEmail(generatedToken);
 
-        System.out.println(generatedToken);
+        System.out.println("Token: " + generatedToken);
 
         assertEquals(email, extractedEmail);
     }
